@@ -41,18 +41,27 @@
     "dice"
   ],
   "jam": {
-      "main": "chance.js"
+    "main": "chance.js"
   },
   "github": "https://github.com/chancejs/chancejs",
-  "maintainers": [{
-    "name": "Victor Quinn",
-    "email": "mail@victorquinn.com",
-    "web": "http://victorquinn.com"
-  }],
+  "maintainers": [
+    {
+      "name": "Victor Quinn",
+      "email": "mail@victorquinn.com",
+      "web": "http://victorquinn.com"
+    }
+  ],
   "spm": {
     "main": "chance.js",
     "ignore": [
       "test"
     ]
+  },
+  "dependencies": {
+    "docpress": "^0.7.0"
+  },
+  "docpress": {
+    "scripts": ["chance.js", "analytics.js", "https://platform.twitter.com/widgets.js"],
+    "github": "chancejs/chancejs"
   }
 }
