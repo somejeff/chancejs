@@ -182,6 +182,13 @@ test('character() obeys lower case', t => {
     })
 })
 
+test('character() with pool supports non-latin characters', t => {
+    _.times(1000, () => {
+        let char = chance.character({ pool: '\u03D5\u03D6\u03D7\u03D8\u03D9\u03E0\u03E1\u03E2\xA2\xA9' })
+        t.true(/[\u03D5\u03D6\u03D7\u03D8\u03D9\u03E0\u03E1\u03E2\xA2\xA9]/.test(char))
+    })
+})
+
 test('floating() returns a random floating', t => {
     t.is(typeof chance.floating(), 'number')
 })
@@ -428,3 +435,12 @@ test('string() obeys symbol', t => {
         t.true(/[\!\@\#\$\%\^\&\*\(\)\[\]]+/.test(str))
     })
 })
+
+test('string() obeys symbol', t => {
+    _.times(1000, () => {
+        let str = chance.string({pool:'\u03D5\u03D6\u03D7\u03D8\u03D9\u03E0\u03E1\u03E2\xA2\xA9'})
+        t.true(/[\u03D5\u03D6\u03D7\u03D8\u03D9\u03E0\u03E1\u03E2\xA2\xA9]+/.test(str))
+    })
+})
+
+
